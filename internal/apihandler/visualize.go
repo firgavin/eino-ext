@@ -167,8 +167,10 @@ func DrawGraph(res http.ResponseWriter, req *http.Request) {
 		canvasInfo = newCanvasInfo
 	}
 
+	allNodes, allEdges := flattenGraph(canvasInfo.GraphSchema)
+
 	var tplData SimpleGraph
-	for _, node := range canvasInfo.Nodes {
+	for _, node := range allNodes {
 		label := node.Name
 		if label == "" {
 			if node.ComponentSchema.Name != "" {
@@ -188,7 +190,7 @@ func DrawGraph(res http.ResponseWriter, req *http.Request) {
 			Type:  string(node.Type),
 		})
 	}
-	for _, edge := range canvasInfo.Edges {
+	for _, edge := range allEdges {
 		tplData.Edges = append(tplData.Edges, struct {
 			From string
 			To   string

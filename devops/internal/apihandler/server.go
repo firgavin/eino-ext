@@ -43,6 +43,7 @@ func StartHTTPServer(_ context.Context, port string) error {
 	startOnce.Do(func() {
 		r := mux.NewRouter()
 		registerRoutes(r)
+		registerVisualizeRoutes(r)
 		err = http.ListenAndServe(":"+port, r)
 		if err != nil {
 			log.Errorf("start debug http server failed, err=%v", err)

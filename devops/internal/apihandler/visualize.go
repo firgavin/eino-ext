@@ -10,6 +10,8 @@ import (
 	"github.com/gorilla/mux"
 )
 
+const debugVis = "/debug/v2"
+
 const graphTpl = `
 <!DOCTYPE html>
 <html>
@@ -144,8 +146,12 @@ func DrawGraph(res http.ResponseWriter, req *http.Request) {
 	}
 	canvasInfo, exist := service.ContainerSVC.GetCanvas(graphID)
 	if !exist {
-		newHTTPResp(newBizError(http.StatusBadRequest, fmt.Errorf("canvas not exist")), newBaseResp(http.StatusBadRequest, "")).doResp(res)
-		return
+		newCanvasInfo, err := service.ContainerSVC.CreateCanvas(graphID)
+		if err != nil {
+			newHTTPResp(newBizError(http.StatusBadRequest, err), newBaseResp(http.StatusBadRequest, "")).doResp(res)
+			return
+		}
+		canvasInfo = newCanvasInfo
 	}
 
 	tmpl := template.Must(template.New("visualization").Funcs(template.FuncMap{
@@ -199,7 +205,7 @@ func ShowGraphs(res http.ResponseWriter, req *http.Request) {
 		graphs = append(graphs, GraphMeta{
 			ID:   id,
 			Name: name,
-			Href: fmt.Sprintf("/graphs/%s", id),
+			Href: fmt.Sprintf("%s/graphs/%s", debugVis, id),
 		})
 	}
 
@@ -209,10 +215,7 @@ func ShowGraphs(res http.ResponseWriter, req *http.Request) {
 }
 
 func registerVisualizeRoutes(r *mux.Router) {
-	const debugVis = "/debug/v2"
-
 	r.Use(recoverMiddleware, corsMiddleware)
-
 	debugR := r.PathPrefix(debugVis).Subrouter()
 	debugR.Path("/graphs").HandlerFunc(ShowGraphs).Methods(http.MethodGet)
 	debugR.Path("/graphs/{graph_id}").HandlerFunc(DrawGraph).Methods(http.MethodGet)

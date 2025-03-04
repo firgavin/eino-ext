@@ -24,8 +24,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/cloudwego/eino-ext/devops/internal/utils/generic"
 	"github.com/cloudwego/eino/compose"
+	"github.com/firgavin/eino-devops/internal/utils/generic"
 )
 
 type mockRunnable interface {

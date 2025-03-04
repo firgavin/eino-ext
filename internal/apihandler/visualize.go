@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"text/template"
 
-	"github.com/cloudwego/eino-ext/devops/internal/service"
+	"github.com/firgavin/eino-devops/internal/service"
 	"github.com/gorilla/mux"
 )
 

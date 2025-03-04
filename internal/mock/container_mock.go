@@ -28,8 +28,8 @@ package mock
 import (
 	reflect "reflect"
 
-	model "github.com/cloudwego/eino-ext/devops/internal/model"
-	model0 "github.com/cloudwego/eino-ext/devops/model"
+	model "github.com/firgavin/eino-devops/internal/model"
+	model0 "github.com/firgavin/eino-devops/model"
 	compose "github.com/cloudwego/eino/compose"
 	gomock "go.uber.org/mock/gomock"
 )

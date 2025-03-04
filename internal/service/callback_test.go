@@ -27,8 +27,8 @@ import (
 
 	"github.com/cloudwego/eino/compose"
 
-	"github.com/cloudwego/eino-ext/devops/internal/mock"
-	"github.com/cloudwego/eino-ext/devops/internal/model"
+	"github.com/firgavin/eino-devops/internal/mock"
+	"github.com/firgavin/eino-devops/internal/model"
 )
 
 type callbackTestSuite struct {

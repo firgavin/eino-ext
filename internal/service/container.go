@@ -22,9 +22,9 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/cloudwego/eino-ext/devops/internal/model"
-	devmodel "github.com/cloudwego/eino-ext/devops/model"
 	"github.com/cloudwego/eino/compose"
+	"github.com/firgavin/eino-devops/internal/model"
+	devmodel "github.com/firgavin/eino-devops/model"
 )
 
 var _ ContainerService = &containerServiceImpl{}

@@ -19,7 +19,7 @@ package devops
 import (
 	"reflect"
 
-	"github.com/cloudwego/eino-ext/devops/internal/model"
+	"github.com/firgavin/eino-devops/internal/model"
 )
 
 // WithDevServerPort sets dev server port, default to 52538

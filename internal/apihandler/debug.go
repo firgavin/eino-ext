@@ -22,13 +22,13 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/cloudwego/eino-ext/devops/internal/apihandler/types"
-	"github.com/cloudwego/eino-ext/devops/internal/model"
-	"github.com/cloudwego/eino-ext/devops/internal/service"
-	"github.com/cloudwego/eino-ext/devops/internal/utils/log"
-	"github.com/cloudwego/eino-ext/devops/internal/utils/safego"
-	devmodel "github.com/cloudwego/eino-ext/devops/model"
 	"github.com/cloudwego/eino/compose"
+	"github.com/firgavin/eino-devops/internal/apihandler/types"
+	"github.com/firgavin/eino-devops/internal/model"
+	"github.com/firgavin/eino-devops/internal/service"
+	"github.com/firgavin/eino-devops/internal/utils/log"
+	"github.com/firgavin/eino-devops/internal/utils/safego"
+	devmodel "github.com/firgavin/eino-devops/model"
 )
 
 func InitDebug(opt *model.DevOpt) {

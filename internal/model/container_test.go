@@ -27,14 +27,14 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	devmodel "github.com/cloudwego/eino-ext/devops/model"
 	"github.com/cloudwego/eino/components"
 	"github.com/cloudwego/eino/components/prompt"
 	"github.com/cloudwego/eino/components/retriever"
 	"github.com/cloudwego/eino/compose"
 	"github.com/cloudwego/eino/schema"
+	devmodel "github.com/firgavin/eino-devops/model"
 
-	"github.com/cloudwego/eino-ext/devops/internal/utils/generic"
+	"github.com/firgavin/eino-devops/internal/utils/generic"
 )
 
 type mockContainer interface {

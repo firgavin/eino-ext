@@ -23,9 +23,9 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/cloudwego/eino-ext/devops/internal/model"
-	"github.com/cloudwego/eino-ext/devops/internal/utils/log"
 	"github.com/cloudwego/eino/compose"
+	"github.com/firgavin/eino-devops/internal/model"
+	"github.com/firgavin/eino-devops/internal/utils/log"
 )
 
 const (

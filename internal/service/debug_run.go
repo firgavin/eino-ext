@@ -23,10 +23,10 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/cloudwego/eino-ext/devops/internal/model"
-	"github.com/cloudwego/eino-ext/devops/internal/utils/log"
-	"github.com/cloudwego/eino-ext/devops/internal/utils/safego"
 	"github.com/cloudwego/eino/compose"
+	"github.com/firgavin/eino-devops/internal/model"
+	"github.com/firgavin/eino-devops/internal/utils/log"
+	"github.com/firgavin/eino-devops/internal/utils/safego"
 )
 
 // TODO@liujian: implement debug run service

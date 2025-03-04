@@ -28,7 +28,7 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/cloudwego/eino-ext/devops/internal/utils/log"
+	"github.com/firgavin/eino-devops/internal/utils/log"
 )
 
 var (

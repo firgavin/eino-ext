@@ -26,7 +26,7 @@ import (
 	. "github.com/bytedance/mockey"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/cloudwego/eino-ext/devops/internal/utils/safego"
+	"github.com/firgavin/eino-devops/internal/utils/safego"
 )
 
 func Test_doResp(t *testing.T) {

@@ -19,8 +19,8 @@ package types
 import (
 	"encoding/json"
 
-	"github.com/cloudwego/eino-ext/devops/internal/model"
-	devmodel "github.com/cloudwego/eino-ext/devops/model"
+	"github.com/firgavin/eino-devops/internal/model"
+	devmodel "github.com/firgavin/eino-devops/model"
 )
 
 type GetCanvasInfoResponse struct {

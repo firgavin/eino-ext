@@ -24,8 +24,6 @@ import (
 	"github.com/google/uuid"
 	"golang.org/x/exp/slices"
 
-	"github.com/cloudwego/eino-ext/devops/internal/utils/generic"
-	devmodel "github.com/cloudwego/eino-ext/devops/model"
 	"github.com/cloudwego/eino/components"
 	"github.com/cloudwego/eino/components/embedding"
 	"github.com/cloudwego/eino/components/indexer"
@@ -33,6 +31,8 @@ import (
 	"github.com/cloudwego/eino/components/prompt"
 	"github.com/cloudwego/eino/components/retriever"
 	"github.com/cloudwego/eino/compose"
+	"github.com/firgavin/eino-devops/internal/utils/generic"
+	devmodel "github.com/firgavin/eino-devops/model"
 )
 
 type GraphContainer struct {

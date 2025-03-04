@@ -21,7 +21,7 @@ import (
 	"net/http"
 	"runtime/debug"
 
-	"github.com/cloudwego/eino-ext/devops/internal/utils/log"
+	"github.com/firgavin/eino-devops/internal/utils/log"
 )
 
 func recoverMiddleware(next http.Handler) http.Handler {

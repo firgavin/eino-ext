@@ -19,8 +19,8 @@ package service
 import (
 	"testing"
 
-	"github.com/cloudwego/eino-ext/devops/internal/model"
 	"github.com/cloudwego/eino/compose"
+	"github.com/firgavin/eino-devops/internal/model"
 
 	"github.com/stretchr/testify/assert"
 )

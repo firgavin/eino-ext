@@ -20,7 +20,7 @@ import (
 	"context"
 	"runtime/debug"
 
-	"github.com/cloudwego/eino-ext/devops/internal/utils/log"
+	"github.com/firgavin/eino-devops/internal/utils/log"
 )
 
 // Go safe goroutine.

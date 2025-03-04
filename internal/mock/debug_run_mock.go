@@ -29,7 +29,7 @@ import (
 	context "context"
 	reflect "reflect"
 
-	model "github.com/cloudwego/eino-ext/devops/internal/model"
+	model "github.com/firgavin/eino-devops/internal/model"
 	gomock "go.uber.org/mock/gomock"
 )
 

@@ -138,12 +138,25 @@ const graphTpl = `
 </html>
 `
 
+type SimpleGraph struct {
+	Nodes []struct {
+		Key   string
+		Label string
+		Type  string
+	}
+	Edges []struct {
+		From string
+		To   string
+	}
+}
+
 func DrawGraph(res http.ResponseWriter, req *http.Request) {
 	graphID := getPathParam(req, "graph_id")
 	if len(graphID) == 0 {
 		newHTTPResp(newBizError(http.StatusBadRequest, fmt.Errorf("graph_name is empty")), newBaseResp(http.StatusBadRequest, "")).doResp(res)
 		return
 	}
+
 	canvasInfo, exist := service.ContainerSVC.GetCanvas(graphID)
 	if !exist {
 		newCanvasInfo, err := service.ContainerSVC.CreateCanvas(graphID)
@@ -152,6 +165,37 @@ func DrawGraph(res http.ResponseWriter, req *http.Request) {
 			return
 		}
 		canvasInfo = newCanvasInfo
+	}
+
+	var tplData SimpleGraph
+	for _, node := range canvasInfo.Nodes {
+		label := node.Name
+		if label == "" {
+			if node.ComponentSchema.Name != "" {
+				label = node.ComponentSchema.Name
+			} else {
+				label = node.Key
+			}
+		}
+
+		tplData.Nodes = append(tplData.Nodes, struct {
+			Key   string
+			Label string
+			Type  string
+		}{
+			Key:   node.Key,
+			Label: label,
+			Type:  string(node.Type),
+		})
+	}
+	for _, edge := range canvasInfo.Edges {
+		tplData.Edges = append(tplData.Edges, struct {
+			From string
+			To   string
+		}{
+			From: edge.SourceNodeKey,
+			To:   edge.TargetNodeKey,
+		})
 	}
 
 	tmpl := template.Must(template.New("visualization").Funcs(template.FuncMap{

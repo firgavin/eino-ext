@@ -163,7 +163,7 @@ func DrawGraph(res http.ResponseWriter, req *http.Request) {
 var listGraphs = ` 
 <html>
 <head>
-	<title>{{ .Name }}</title>
+	<title>Graphs</title>
 	<style>a {text-decoration: none;}</style>
 </head>
 <body>
@@ -214,6 +214,6 @@ func registerVisualizeRoutes(r *mux.Router) {
 	r.Use(recoverMiddleware, corsMiddleware)
 
 	debugR := r.PathPrefix(debugVis).Subrouter()
-	debugR.Path("/graphs").HandlerFunc(ListGraphs).Methods(http.MethodGet)
+	debugR.Path("/graphs").HandlerFunc(ShowGraphs).Methods(http.MethodGet)
 	debugR.Path("/graphs/{graph_id}").HandlerFunc(DrawGraph).Methods(http.MethodGet)
 }

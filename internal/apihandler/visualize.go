@@ -207,7 +207,7 @@ func DrawGraph(res http.ResponseWriter, req *http.Request) {
 	}).Parse(graphTpl))
 
 	res.Header().Set("Content-Type", "text/html; charset=utf-8")
-	tmpl.Execute(res, canvasInfo)
+	tmpl.Execute(res, tplData)
 }
 
 var listGraphs = ` 
